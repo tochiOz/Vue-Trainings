@@ -1,29 +1,66 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+    <div>
+      <b-navbar 
+        toggleable="lg" 
+        type="dark" 
+        variant="warning">
+
+        <b-navbar-brand href="/">Vue-Training</b-navbar-brand>
+
+        <b-navbar-toggle target="nav_collapse" />
+
+          <b-collapse is-nav id="nav_collapse">
+            <b-navbar-nav>
+              <b-nav-item href="/" >Home</b-nav-item>
+              <b-nav-item href="/about" >About</b-nav-item>
+            </b-navbar-nav>
+
+            <!-- Right aligned nav items -->
+            <b-navbar-nav class="ml-auto">
+              <b-nav-item-dropdown text="Dropdown 1,2,3" right-alignment>
+                <b-dropdown-item href="#one" >one</b-dropdown-item>
+                <b-dropdown-item href="#two" >two</b-dropdown-item>
+                <b-dropdown-divider />
+                <b-dropdown-item href="#three" >three</b-dropdown-item>
+              </b-nav-item-dropdown>
+            </b-navbar-nav>
+          </b-collapse>
+      </b-navbar>
     </div>
-    <router-view/>
+    
+    <div class="router">
+      <router-view/>
+    </div>
+  
+    <footer>
+      <b-card class="footer">
+        <b-row class="warning" >
+          <b-col>
+            &copy; Copyright, 2019
+          </b-col>
+          <b-col right class="foot2 ml-auto">
+            Vue Training
+          </b-col>
+        </b-row>
+      </b-card>
+    </footer>
   </div>
+  
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<style scoped>
+  .router {
+    min-height: 85vh;
   }
-}
+
+  .footer {
+   background-color: #fcad05; 
+   color: aliceblue;
+  }
+
+  .foot2 {
+    display: flex;
+    justify-self: flex-end;
+  }
 </style>
