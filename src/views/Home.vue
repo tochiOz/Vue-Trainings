@@ -13,12 +13,22 @@
           <input type="text" class="form-control" v-model="filterName" >
           <input type="button" class="btn btn-danger mt-3" value="Add" @click.prevent="addName">
           <ul>
-            <li v-for="name in filteredName" :key="name"> {{ name }}</li>
+            <li 
+              v-for="(name, i) in filteredName" 
+              :key="name"
+              @click.prevent="inputName(i)"> 
+                {{ name }}
+            </li>
           </ul>
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
-
+        <div class="head mt-10">
+          <h1>Mixins</h1>
+        </div>
+        <div>
+          <app-show></app-show>
+        </div>
       </div> 
     </div>
   </div>
@@ -26,7 +36,10 @@
 
 
 <script>
-// @ is an alias to /src
+
+import showApp from '@/components/appshow1.vue'
+import { namesMixin } from "@/components/appMixin.js";
+// @ is an namesMixinalias to /src
 //when anything is declared globally in main.js there is no need to impport the file
 //the march() method helps to find if strings compare have similar data properties
 export default {
@@ -34,10 +47,14 @@ export default {
 
   data () {
     return {
-      texts: ['HELLO Filters'],
-      names: ['Ekom', 'Kingsley', 'Richie', 'Idara', 'Femi', 'Emma', 'Peter', 'Ngozi', 'Ugo'],
-      filterName: ''
+      texts: ['HELLO Filters']
     }
+  },
+
+  mixins: [namesMixin],
+
+  components: {
+    appShow: showApp
   },
 
   //you can register your filters locally by calling it within the page
@@ -49,17 +66,19 @@ export default {
   },
 
   //this is an alternative method for using filters using the computed property
-  computed: {
-    filteredName () {
-      return this.names.filter((items ) => {//callbacks are called
-        return items.match(this.filterName)
-      })
-    }
-  },
+  
 
   methods: {
+    inputName (i) {
+      if(this.filteredName[i] !== null){
+        this.filterName = this.filteredName[i]
+      }
+      //return this.filterName = index
+    },
+
     addName () {
       this.texts.push(this.filterName)
+      // return this.filterName = ''
     }
   }
   
