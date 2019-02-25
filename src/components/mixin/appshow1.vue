@@ -20,7 +20,7 @@
 
 <script>
 
-import { namesMixin } from '@/components/appMixin.js'
+import { namesMixin } from '@/components/mixin/appMixin.js'
 // @ is an alias to /src
 //when anything is declared globally in main.js there is no need to impport the file
 //the march() method helps to find if strings compare have similar data properties

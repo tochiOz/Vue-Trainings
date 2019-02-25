@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import singleAnimation from './views/animations/singleAnimation.vue'
+import multipleAnimation from './views/animations/multipleAnimation.vue'
+import jsAnimation from './views/animations/jsAnimation.vue'
+import groupAnimation from './views/animations/groupAnimation.vue'
 
 Vue.use(Router)
 
@@ -14,12 +18,24 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/animation',
+      name: 'singleAnimation',
+      component: singleAnimation
+    },
+    {
+      path: '/multipleAnimation',
+      name: 'multipleAnimation',
+      component: multipleAnimation
+    },
+    {
+      path: '/jsAnimation',
+      name: 'jsAnimation',
+      component: jsAnimation
+    },
+    {
+      path: '/groupAnimations',
+      name: 'groupAnimation',
+      component: groupAnimation
     }
   ]
 })
