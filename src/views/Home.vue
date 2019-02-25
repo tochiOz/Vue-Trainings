@@ -37,15 +37,15 @@
 
 <script>
 
-import showApp from '@/components/appshow1.vue'
-import { namesMixin } from "@/components/appMixin.js";
+import showApp from '@/components/mixin/appshow1.vue'
+import { namesMixin } from "@/components/mixin/appMixin.js";
 // @ is an namesMixinalias to /src
 //when anything is declared globally in main.js there is no need to impport the file
 //the march() method helps to find if strings compare have similar data properties
 export default {
   name: 'home',
 
-  data () {
+  data () { 
     return {
       texts: ['HELLO Filters']
     }
