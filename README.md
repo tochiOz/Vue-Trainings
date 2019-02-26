@@ -1,4 +1,4 @@
-# portfolio
+# training
 
 ## Project setup
 ```

@@ -13,6 +13,7 @@
           <b-collapse is-nav id="nav_collapse">
             <b-navbar-nav>
               <b-nav-item href="/" >Filter & Mixins</b-nav-item>
+              <b-nav-item href="/http" >Serverside Vue</b-nav-item>
             </b-navbar-nav>
 
             <b-navbar-nav>
