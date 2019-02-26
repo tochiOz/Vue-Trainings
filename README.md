@@ -1,4 +1,4 @@
-# portfolio
+# Vue Training
 
 ## Project setup
 ```
