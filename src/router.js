@@ -5,6 +5,9 @@ import singleAnimation from './views/animations/singleAnimation.vue'
 import multipleAnimation from './views/animations/multipleAnimation.vue'
 import jsAnimation from './views/animations/jsAnimation.vue'
 import groupAnimation from './views/animations/groupAnimation.vue'
+import http from './views/http/http.vue'
+import Display from './views/store/index.vue'
+
 
 Vue.use(Router)
 
@@ -31,6 +34,16 @@ export default new Router({
       path: '/jsAnimation',
       name: 'jsAnimation',
       component: jsAnimation
+    },
+    {
+      path: '/http',
+      name: 'http',
+      component: http
+    },
+    {
+      path: '/store/display',
+      name: 'index',
+      component: Display
     },
     {
       path: '/groupAnimations',
