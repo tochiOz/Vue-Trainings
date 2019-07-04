@@ -1,4 +1,4 @@
-# training
+## Vue Training
 
 ## Project setup
 ```
